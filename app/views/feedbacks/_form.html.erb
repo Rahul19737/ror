@@ -1,0 +1,27 @@
+<%= form_with(model: feedback) do |form| %>
+  <% if feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+
+      <ul>
+        <% feedback.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :feedback, class: 'form-label' %>
+    <%= form.text_area :feedback, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.number_field :guest_id, class: 'form-control', value: 10, type: :hidden %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-success' %>
+    <%= link_to 'Feedbacks', feedbacks_path, class: 'btn btn-secondary' %>
+  </div>
+<% end %>

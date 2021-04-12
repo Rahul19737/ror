@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  checked_in: MyString
+  name: MyString
+  phone_number: MyString
+  reason_of_visit: MyString
+
+two:
+  checked_in: MyString
+  name: MyString
+  phone_number: MyString
+  reason_of_visit: MyString

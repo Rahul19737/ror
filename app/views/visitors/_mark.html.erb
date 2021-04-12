@@ -1,0 +1,45 @@
+<%= form_with(model: visitor) do |form| %>
+  <% if visitor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(visitor.errors.count, "error") %> prohibited this visitor from being saved:</h2>
+
+      <ul>
+        <% visitor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :checked_in, class:"form-label" %>
+    <%= form.label :checked_in, class:"form-control", value:Time.zone.now %>
+    <%= form.text_field :checked_in, class:"form-control", value:Time.zone.now, type: :hidden %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :name, class:"form-label" %>
+    <%= form.label :name, class:"form-control text-center", value:current_guest.name %>
+    <%= form.text_field :name, class:"form-control text-center", value:current_guest.name, type: :hidden %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :phone_number, class:"form-label" %>
+    <%= form.label :phone_number, class:"form-control text-center", value: current_guest.phone_number %>
+    <%= form.text_field :phone_number, class:"form-control text-center", value: current_guest.phone_number, type: :hidden %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.text_field :guest_id, id: :visitor_guest_id, class:"form-control", value: current_guest.id, type: :hidden %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :reason_of_visit, class:"form-label" %>
+    <%= form.text_area :reason_of_visit, class:"form-control text-center" %>
+  </div>
+
+  <div class="actions mb-3">
+    <%= form.submit 'Mark', class:'btn btn-success' %>
+  </div>
+<% end %>
+

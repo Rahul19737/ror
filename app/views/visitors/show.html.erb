@@ -1,0 +1,15 @@
+<div class="card text-center shadow-lg mb-5">
+  <div class="card-header">
+    <%= @visitor.created_at %>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title"> <%= @visitor.name %> </h4>
+    <h5 class='card-subtitle mb-2 text-muted'> <%= @visitor.phone_number %> </h5>
+    <p class="card-text"> <%= @visitor.reason_of_visit %> </p>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Edit', edit_visitor_path(@visitor), class:'btn btn-primary' %> 
+    <%= link_to 'Back', visitors_path, class: 'btn btn-secondary' %>
+  </div>
+</div>
+

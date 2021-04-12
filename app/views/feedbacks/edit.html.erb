@@ -1,0 +1,11 @@
+<div class="card text-center">
+  <div class="card-body">
+    <h1>Editing Feedback</h1>
+    <br>
+    <%= render 'form', feedback: @feedback %>
+    
+    <%= link_to 'Show', @feedback, class:'btn btn-primary' %>
+    <%= link_to 'Back', feedbacks_path, class:'btn btn-secondary' %>
+  </div>
+</div>
+<br>
